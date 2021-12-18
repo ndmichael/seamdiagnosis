@@ -16,7 +16,7 @@ function getAuth(){
         'Authorization' => $authorization
     ])
     ->post("https://authservice.priaid.ch/login");
-    return $obj;
+    return $obj['Token'];
 }
 
 class DiagnosisController extends Controller
@@ -29,8 +29,7 @@ class DiagnosisController extends Controller
 
         $symptoms = Http::get("https://healthservice.priaid.ch/symptoms?token=$ACCESS_TOKEN&format=json&language=en-gb")
         ->json();
-        return $ACCESS_TOKEN;
-        // return view('index', ['symptoms'=> $symptoms]);
+        return view('index', ['symptoms'=> $symptoms]);
     }
 
     public function result(){
