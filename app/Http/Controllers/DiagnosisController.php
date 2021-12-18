@@ -11,13 +11,12 @@ function getAuth(){
 
     $computedHash = base64_encode(hash_hmac ( 'md5' , 'https://authservice.priaid.ch/login' , $secret_key, true ));
 	$authorization = 'Bearer '.$api_key.':'.$computedHash;
-    $r = Http::withHeaders([
+    $obj = Http::withHeaders([
         'Content-Type'=> 'application/json',
         'Authorization' => $authorization
     ])
-    ->post("https://authservice.priaid.ch/login")
-    -> json();
-        return $r['Token']; 
+    ->post("https://authservice.priaid.ch/login");
+    return $obj;
 }
 
 class DiagnosisController extends Controller
