@@ -15,7 +15,7 @@
                         <label for="exampleDataList" class="form-label">Type in yout symptoms</label>
                         <input class="form-control" name="symptoms" list="datalistOptions " id="exampleDataList " placeholder="Symptoms... ">
                         <datalist id="datalistOptions ">
-                            @if(count($symptoms) > 0)
+                            @if($symptoms)
                             @foreach($symptoms as $symptom)
                             <option value="{{$symptom[ 'ID']}} ">
                                 {{$symptom['Name']}}
