@@ -5,12 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
+/* 
+* Function to get access token from api endpoint using
+* created api_key and secret_key
+*/
 function getAuth(){
     $api_key = config('services.apmedic.api_key');
     $secret_key = config('services.apmedic.secret_key');
-
+    // hashed password attached to bearer
     $computedHash = base64_encode(hash_hmac ( 'md5' , 'https://authservice.priaid.ch/login' , $secret_key, true ));
 	$authorization = 'Bearer '.$api_key.':'.$computedHash;
+    // token generated assigned to $obj variable
     $obj = Http::withHeaders([
         'Content-Type'=> 'application/json',
         'Authorization' => $authorization
@@ -24,10 +29,10 @@ class DiagnosisController extends Controller
     
     //
     public function index(){
-        
-        $ACCESS_TOKEN = getAuth();
+        // assign token as ACCESS_TOKEN     
+        $config_token = getAuth();
 
-        $symptoms = Http::get("https://healthservice.priaid.ch/symptoms?token=$ACCESS_TOKEN&format=json&language=en-gb")
+        $symptoms = Http::get("https://healthservice.priaid.ch/symptoms?token=$config_token&format=json&language=en-gb")
         ->json();
         return view('index', ['symptoms'=> $symptoms]);
     }

@@ -15,12 +15,17 @@
                         <label for="exampleDataList" class="form-label">Type in yout symptoms</label>
                         <input class="form-control" name="symptoms" list="datalistOptions " id="exampleDataList " placeholder="Symptoms... ">
                         <datalist id="datalistOptions ">
-                            @if($symptoms)
+                            <!-- Looping through returned object-->
+                            @if(!empty($symptoms))
                             @foreach($symptoms as $symptom)
-                            <option value="{{$symptom[ 'ID']}} ">
+                            <option value="{{$symptom[ 'ID']}}">
                                 {{$symptom['Name']}}
                             </option>
                             @endforeach
+                            @else
+                            <option value="">
+                                Loading items...
+                            </option>
                             @endif
                         </datalist>
                     </div>
@@ -48,7 +53,7 @@
                 </form>
             </div>
         </div>
-
+        <!--Mobile images-->
         <div class="col-12 col-sm-4">
             <div class="p-4">
                 <img src="/images/firstapp.png" class="img-fluid" alt="" />

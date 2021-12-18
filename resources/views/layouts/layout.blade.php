@@ -27,7 +27,7 @@
                         <a class="nav-link" href="#">Note</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://ndmichael.github.io/" targe="_blank">Github</a>
+                        <a class="nav-link" href="https://ndmichael.github.io/" target="_blank">Github</a>
                     </li>
                 </ul>
             </div>
