@@ -16,7 +16,7 @@ function getAuth(){
         'Authorization' => $authorization
     ])
     ->post("https://authservice.priaid.ch/login");
-    if($r !== null){
+    if(!is_null($r)){
         return ($r['Token']);
     }   
 }
