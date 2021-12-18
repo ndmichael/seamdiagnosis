@@ -9,7 +9,7 @@
                 </p>
             </div>
             <div class="col-12 col-md-6 offset-md-1">
-                @if(count($diagnoses) > 0)
+                @if($diagnoses)
                     @foreach($diagnoses as $diagnosis)
                 <div class="bg-white border p-3 my-4 rounded">
                     <h2>{{$diagnosis['Issue']['Name']}}</h2>
