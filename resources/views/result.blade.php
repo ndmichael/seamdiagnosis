@@ -9,19 +9,13 @@
                 </p>
             </div>
             <div class="col-12 col-md-6 offset-md-1">
-                @if($diagnoses)
-                    @foreach($diagnoses as $diagnosis)
+                @foreach($diagnoses as $diagnosis)
                 <div class="bg-white border p-3 my-4 rounded">
                     <h2>{{$diagnosis['Issue']['Name']}}</h2>
                     <p class="text-muted pt-1 pb-3">{{$diagnosis['Issue']['IcdName']}}</p>
                     <p class="text-muted">Specialization: <span class="text-primary">{{$diagnosis['Specialisation'][0]['Name']}}</span></p>
                 </div>
                 @endforeach
-                @else 
-                    <div class="py-4 px-2">
-                        <h3>Diagnosis loading...</h3>
-                    </div>  
-                @endif
                 
             </div>
             <div class="col-12 col-md-3 offset-md-2 py-4">
