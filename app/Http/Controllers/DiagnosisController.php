@@ -33,8 +33,8 @@ class DiagnosisController extends Controller
         'Content-Type'=> 'application/json',
         'Authorization' => $authorization
     ])
-    ->post("https://authservice.priaid.ch/login");
-        $ACCESS_TOKEN = $r['Token'];
+    ->post("https://authservice.priaid.ch/login")['Token'];
+        $ACCESS_TOKEN = $r;
 
         $symptoms = Http::get("https://healthservice.priaid.ch/symptoms?token=$ACCESS_TOKEN&format=json&language=en-gb")
         ->json();
