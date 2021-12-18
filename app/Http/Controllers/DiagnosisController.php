@@ -16,9 +16,6 @@ function getAuth(){
         'Authorization' => $authorization
     ])
     ->post("https://authservice.priaid.ch/login");
-    if(!is_null($r)){
-        return ($r['Token']);
-    }   
 }
 
 class DiagnosisController extends Controller
