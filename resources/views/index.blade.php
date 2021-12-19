@@ -37,11 +37,10 @@
                             </div>
                             <div class="col-6">
                                 <h3 class="h5 ">Gender:</h3>
-                                <input type="text" name="gender" value="male" />
-                                <!-- <input type="radio" class="btn-check" id="male" name="gender" autocomplete="off" value="male" required>
+                                <input type="radio" class="btn-check" id="male" name="gender" autocomplete="off" value="male" required>
                                 <label class="btn btn-outline-primary" for="male">Male</label>
                                 <input type="radio" class="btn-check" id="female" name="gender" autocomplete="off" value="female">
-                                <label class="btn btn-outline-primary" for="female">Female</label> -->
+                                <label class="btn btn-outline-primary" for="female">Female</label>
                             </div>
                         </div>
                         <div class="d-grid gap-2 col-11">
