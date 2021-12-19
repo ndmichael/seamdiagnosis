@@ -9,7 +9,7 @@
                 <p class=" text-muted">
                     Select Symptoms, and enter basic informations so we can give you accurate diagnosis.
                 </p>
-                <form action="/diagnosis/result/" method="POST" class="row g-3">
+                <form action="/diagnosis/result" method="POST" class="row g-3">
                     @csrf
                     <div class="col-12 col-md-12">
                         <label for="exampleDataList" class="form-label">Type in yout symptoms</label>
