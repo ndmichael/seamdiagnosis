@@ -44,7 +44,7 @@ class DiagnosisController extends Controller
             $age = request('age');
             $diagnoses = Http::get("https://healthservice.priaid.ch/diagnosis?symptoms=[$symptoms]&gender=$gender&year_of_birth=$age&token=$config_token&format=json&language=en-gb")
         ->json();
-       
+       var_dump($diagnoses);
         // return $diagnoses;
         return view('result', ['diagnoses'=> $diagnoses]);
     }
