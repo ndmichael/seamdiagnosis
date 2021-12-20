@@ -25,7 +25,7 @@
                     {{$msg}}
                     @endif
                 </h1>
-                <form action="/diagnosis/result" method="POST">
+                <form action="/" method="POST">
                     @csrf
                     <div class="py-4">
                         <h3 class="h5">Send a Feedback:</h3>

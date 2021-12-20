@@ -49,7 +49,10 @@ class DiagnosisController extends Controller
     }
 
     public function store(){
-        return view('result', ['msg'=> "submitted"]); 
+        $feedback = new Feedback();
+        $feedback->feedback = request('feedback');
+        $feedback->save();
+        return redirect('/')->with('msg', 'Thanks for sending us a feedback'); 
     }
        
 }

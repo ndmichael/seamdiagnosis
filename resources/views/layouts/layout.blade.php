@@ -33,6 +33,16 @@
             </div>
         </div>
     </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6 mx-auto text-center">
+            @if(session('msg'))
+            <p class="p3 alert alert-success">{{session('msg')}} </p>
+            @endif
+            </div>
+        </div>
+    </div>
+    
     @yield('content')
 
     <footer class="border-top bg-light py-3">
