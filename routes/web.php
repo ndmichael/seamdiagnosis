@@ -23,3 +23,4 @@ Route::get('/', [DiagnosisController::class, 'index']);
 
 Route::get('/diagnosis/result/',[DiagnosisController::class, 'result']);
 Route::post('/diagnosis/result/',[DiagnosisController::class, 'result']);
+// Route::post('/diagnosis/result/',[DiagnosisController::class, 'store']);

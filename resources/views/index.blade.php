@@ -13,12 +13,12 @@
                     @csrf
                     <div class="col-12 col-md-12">
                         <label for="exampleDataList" class="form-label">Type in yout symptoms</label>
-                        <input class="form-control" name="symptoms" list="datalistOptions " id="exampleDataList " placeholder="Symptoms... ">
-                        <datalist id="datalistOptions ">
+                        <input class="form-control" name="symptoms" list="datalistOptions" id="exampleDataList" placeholder="Symptoms...">
+                        <datalist id="datalistOptions">
                             <!-- Looping through returned object-->
                             @if(!empty($symptoms))
                             @foreach($symptoms as $symptom)
-                            <option value="{{$symptom[ 'ID']}}">
+                            <option value="{{$symptom['ID']}}">
                                 {{$symptom['Name']}}
                             </option>
                             @endforeach
@@ -33,7 +33,7 @@
                         <div class="row py-4 ">
                             <div class="col-6">
                                 <label for="age " class="form-label ">Age</label>
-                                <input type="number" class="form-control " id="age" name="age" maxlength="4" size="4" required>
+                                <input type="number" class="form-control " id="age" name="age" min="1" max="100" size="4" required>
                             </div>
                             <div class="col-6">
                                 <h3 class="h5 ">Gender:</h3>
@@ -48,7 +48,6 @@
                                 GET DIAGNOSIS
                             </button>
                         </div>
-
                     </div>
                 </form>
             </div>

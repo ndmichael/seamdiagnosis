@@ -14,9 +14,9 @@ class CreateFeedbacksTable extends Migration
     public function up()
     {
         Schema::create('feedbacks', function (Blueprint $table) {
-            $table->id('id');
+            $table->id();
             $table->timestamps();
-            $table->string('feedback');
+            $table->String('feedback');
         });
     }
 

@@ -40,10 +40,10 @@
             <div class="row">
                 <div class="col-12 col-md-4 offset-md-4 text-center">
                     <div class="">
-                        <p>
+                        <a href="https://seamhealth.com/" target="_blank">
                             <b>&copy; </b> <span class="text-primary">seamhealth Innovation Diagnosis app |
                                 Terms</span>
-                        </p>
+                        </a>
                     </div>
                     <p>
                         developed by: <b class="text-danger">Michael Ukeje</b>

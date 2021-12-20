@@ -14,13 +14,18 @@
                 <div class="bg-white border p-3 my-4 rounded">
                     <h2>{{$diagnosis['Issue']['Name']}}</h2>
                     <p class="text-muted pt-1 pb-3">{{$diagnosis['Issue']['IcdName']}}</p>
-                    <p class="text-muted">Specialization: <span class="text-primary">{{$diagnosis['Specialisation'][0]['Name']}}</span></p>
+                    <p class="text-muted">Specialization: <span class="text-primary">{{$diagnosis['Specialisation'][0]['Name']}}</span>
+                    <span class="ps-3">Chances: <b>{{$diagnosis['Issue']['Accuracy']}}% </b> </span>
+                </p>
                 </div>
-                @endforeach
-                
+                @endforeach                
             </div>
             <div class="col-12 col-md-3 offset-md-2 py-4">
-                <form action="" method="">
+                <h1>@if(!empty($msg))
+                    {{$msg}}
+                    @endif
+                </h1>
+                <form action="/diagnosis/result" method="POST">
                     @csrf
                     <div class="py-4">
                         <h3 class="h5">Send a Feedback:</h3>
@@ -33,10 +38,8 @@
                     <button type="submit" class="btn btn-info">
                         Send Feedback
                     </button>
-
+                </form>
             </div>
-
-            </form>
         </div>
 
     </div>
