@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
-use App\models\Feedback;
+// use App\models\Feedback;
+use App\Models\Feedback;
 
 /* 
 * Function to get access token from api endpoint using
